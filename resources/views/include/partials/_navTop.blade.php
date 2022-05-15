@@ -1,18 +1,11 @@
-<nav id="colab-top-nav" class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
-    <span class="navbar-leither"></span>
+<nav class="topnav">
 
-    <div class="collapse navbar-collapse top-nav-right" id="navbarSupportedContent">
-        <ul class="navbar-nav icon-bar">
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-bell"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-lock-open"></i>
-                </a>
-            </li>
-        </ul>
+    <div class="bot-line-icon">
+        <div role="button" class="a-round-img-sm user-img" style="background-image:url('{{ asset('img/userDefault.jpg') }}');"></div>
+    </div>
+    
+    <div class="topnav-icons-bar mh-1">
+        <i role="button" class="fa-regular fa-bell" id="notifcation-btn"></i>
+        <i role="button" class="fa-solid fa-headset"></i>
     </div>
 </nav>

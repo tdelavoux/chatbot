@@ -27,55 +27,48 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 span[role=button]{cursor: pointer;}
-
-/*------------- CONTENT PAGE ----------------*/
-body,html{width:100%;height:100%; max-height:100%;overflow:hidden;margin:0;}
-body{display:flex;flex-direction: column;}
 i{margin:0 0.5em;}
-#logoApp{ height:30px; margin: 0 0.3em;}
-#content{flex:1; width:100%;display:flex;overflow-y:auto;}
-#content-page{flex:1; padding: 2em;overflow-y:auto;}
-.content-page-inline{display:flex;flex-direction:row;}
-.option-content-page{padding: 0 !important;}
-
 label{font-weight:bold; color:#929292}
 
-/* ----------------- TITLES -----------------*/
-h1{color: #6189BD; padding: 0.5em; font-size:33px;font-weight:bold; border-bottom: solid 1px #6189BD;}
-h2{color: #6189BD; padding: 0.5em; font-size:25px;font-weight:bold;}
-h4{color: #8fa2bf; padding: 0.5em;}
+/*------------- CONTENT PAGE AND NAVS ----------------*/
+body,html{width:100%;height:100%; max-height:100%;overflow:hidden;margin:0;}
+body{display:flex;}
+#content{flex:1; width:100%;display:flex;flex-direction:column;}
+#content-page{flex:1; padding: 2em;overflow-y:auto;}
 
-/* ######################### NAVBAR #################################### */
-#colab-top-nav{background-color:#6189BD;display:flex;justify-content: space-between;min-height:45px;align-items: center}
-.navbar-leither{width:70px; background-color:#C3C9E9;height:100%;}
-.top-nav-right{justify-content:flex-end;}
-.nav-link{color:#F4F7F8!important;font-size: 18px;}
-.nav-link:hover{color:#EBEBEB!important;}
-.navbar-brand{color:#F4F7F8;font-size:20px;}
+:root{
+  --ntext:#fff;
+  --nv1 : #3f4d63;
+  --nv2 : #4c5a72;
+  --nv3 : #85a1c1;
+  --nv4 : #c6ccd8;
 
-.sidenav{display: flex; flex-direction:column; height:100%; background-color:#373F47;padding: 1em 0;min-width:70px;}
-.nav-link-left{color:#F4F7F8!important;font-size: 20px; padding: 0.5em;}
-.nav-link-left:hover{background-color:#5a5956 !important;}
-.navbar-nav{display:flex; align-items: center;}
-.nav-link{display:flex; padding:0;  align-items: center;}
-.icon-bar{padding: 0 1em;}
+  --unread-bg : #f0f5ff;
+
+  --white : #fff;
+  --light-grey : #e4e2e2;
+  --middle-grey : #ddd8d8;
+  --shadow-grey : #aaa6a6;
+}
+.logo-app{background-color:var(--nv4);}
+.sidenav{display: flex; flex-direction:column; max-height:100vh; background-color:var(--nv1);padding: 1em 0;min-width:220px;border-radius: 0 5px 5px 0;}
+.sidenav-header{color:var(--ntext);display:flex;align-items: center;justify-content: center;font-size: 25px;}
+.light-text{color:var(--nv4)}
+.sidenav-content{flex:1;display: flex; flex-direction:column; }
+.sidenav-sparator{border-bottom:solid 1px  var(--nv3);}
+.nav-link-left{color:var(--nv4);margin:0.3em;padding:0.6em;border-radius:8px;display:flex;justify-content: space-between;}
+.nav-link-left:hover{background-color:var(--nv2);color: var(--ntext)}
+#side-search{background-color:var(--nv4); padding-right:2.5em; color:var(--nv2)}
+.labbeling{background-color:var(--nv4);color: var(--nv2);border-radius:50%;padding: 3px 8px;font-size:13px;}
+
+.topnav{display:flex;flex-direction:row-reverse;align-items: center; padding: 0.7em 1.5em;border-bottom:solid 1px var(--light-grey); color: var(--nv2); font-size: 20px;}
+.user-img{box-shadow: 10px 5px 35px 5px var(--shadow-grey);}
+
 
 /* ---------------- Chatbot content -------------------- */
 #chat-circle {position: fixed;bottom: 20px;right: 30px;}
 .chatbot-icon{box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.6), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);}
-#chatting-room {
-    display:none;
-    background: #efefef;
-    position:fixed;
-    right:40px;
-    bottom:100px;  
-    width:430px;
-    max-width: 85vw;
-    max-height:100vh;
-    min-height:500px;
-    border-radius:7px;
-    box-shadow: 0px 5px 35px 9px #ccc;
-}
+#chatting-room {display:none;background: #efefef;position:fixed;right:40px;bottom:100px;  width:430px;max-width: 85vw;max-height:100vh;min-height:500px;border-radius:7px;box-shadow: 0px 5px 35px 9px var(--shadow-grey);}
 .chat-box-content{position: absolute;display:flex;flex-direction: column;height:100%;width:100%;border-radius:7px;}
 .chat-box-header{padding:1em;background-color:#6189BD;color:#fff;border-radius:7px 7px 0 0;}
 .chat-box-body{flex:1;overflow-y:auto;}
@@ -87,11 +80,6 @@ h4{color: #8fa2bf; padding: 0.5em;}
 .user-bubble{background-color:#2dac4f}
 .app-description{font-size:9px; font-style: italic}
 
-/**
-* ==============================================
-* Dot Typing
-* ==============================================
-*/
 .dots-line{ display:flex;}
 .dots { margin: 0 2px; width: 8px; height: 8px; background-color: #fff; color: #fff; border-radius:50%; animation: typing 0.8s infinite linear;}
 .dots:nth-child(2) {  animation-delay: -0.2s;}
@@ -102,3 +90,21 @@ h4{color: #8fa2bf; padding: 0.5em;}
     60% {transform: translateY(-2px)}
     80% {transform: translateY(0)}
 }
+
+
+/* ---------------- notifications content -------------------- */
+
+#notification-room{display:none;background: var(--white);position:fixed;top:60px;right:150px;  width:430px;max-width:85vw;max-height:100vh;min-height:500px;border-radius:7px;
+  box-shadow: 0px 4px 35px 4px var(--shadow-grey);}
+.chat-box-content{display:flex;flex-direction: column;}
+.notification-box-header{text-align: center;font-size:28px;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;color: var(--nv1);border-bottom:solid 1px var(--middle-grey);}
+.notification-box-body{flex:1;max-height:300px;overflow-y:auto;max-height:450px}
+.notification-box-body::-webkit-scrollbar {display: none;}
+.nofication{border-bottom:solid 1px var(--middle-grey);}
+.notification-header label{color:var(--nv2);font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif}
+.small-text{font-size:11px;color:#a3a1a1;}
+.nofication p{color:#777272}
+.unread{border-left:solid 2px var(--p-primary);background-color: var(--unread-bg)}
+
+#notifcation-btn{position:relative;}
+#notifcation-btn::after{content:"\A";width:10px;height:10px;border-radius:50%;background: #579ffb;position:absolute;top:-5px;}
